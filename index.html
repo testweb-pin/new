@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>จองเวลาเรียนกอล์ฟ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>จองเวลาเรียนกอล์ฟ</h1>
+
+    <h2>เลือกวันที่ต้องการเรียน</h2>
+    <input type="date" id="date">
+
+    <h2>เลือกเวลา</h2>
+    <div class="time-slots">
+      <button class="time">08:00</button>
+      <button class="time disabled">09:00</button>
+      <button class="time selected">10:00</button>
+      <button class="time">13:00</button>
+      <button class="time">14:00</button>
+    </div>
+
+    <button class="next">ถัดไป</button>
+  </div>
+</body>
+</html>

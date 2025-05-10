@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>กรอกข้อมูลผู้เรียน</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>กรอกข้อมูลผู้เรียน</h1>
+    <form id="booking-form">
+      <label>ชื่อ-นามสกุล:<br>
+        <input type="text" name="name" required>
+      </label><br><br>
+
+      <label>เบอร์โทรศัพท์:<br>
+        <input type="tel" name="phone" required>
+      </label><br><br>
+
+      <label>อีเมล:<br>
+        <input type="email" name="email">
+      </label><br><br>
+
+      <label>หมายเหตุเพิ่มเติม:<br>
+        <textarea name="note"></textarea>
+      </label><br><br>
+
+      <button type="submit" class="next">ยืนยันการจอง</button>
+    </form>
+  </div>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzfiW5BWWsig4J6Q96jwG47v8wTzr3yVA3U6QKLFH_klGQ0mpfwrb7HD4oGVE4CleJ1Mw/exec';
+    const form = document.getElementById('booking-form');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          alert('✅ จองเรียบร้อยแล้ว!');
+          window.location.href = "success.html";
+        })
+        .catch(error => alert('❌ เกิดข้อผิดพลาด โปรดลองใหม่'));
+    });
+  </script>
+</body>
+</html>
